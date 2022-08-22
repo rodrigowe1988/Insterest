@@ -1,15 +1,37 @@
-<form>
-	<div class="form-group">
-		<label for="title">Title:</label>
-		<input type="text" placeholder="Insert a title here" required>
-	</div>
-	<div class="form-group">
-		<label for="description">Description:</label>
-		<textarea placeholder="What happened at this moment?" required></textarea>
-	</div>
-	<div class="form-group">
-		<label for="image">Put the photo that represent this moment perfectly.</label>
-		<input type="file" name="photo">
-	</div>
-	<input type="submit" value="{{btnText}}">
+<form (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input
+      type="text"
+      placeholder="Insert a title here"
+      formControlName="title"
+      required
+    />
+    <div *ngIf="title.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="title.errors?.['required']">
+        You must insert a title!
+      </p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea
+      placeholder="What happened at this moment?"
+      formControlName="description"
+      required
+    ></textarea>
+    <div *ngIf="description.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="description.errors?.['required']">
+        You must insert a
+        description!
+      </p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="image"
+      >Choose the photo that represent this moment perfectly.</label
+    >
+    <input type="file" name="photo" accept="image/" />
+  </div>
+  <input type="submit" value="{{ btnText }}" />
 </form>

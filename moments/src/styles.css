@@ -1,58 +1,66 @@
 * {
-	padding: 0;
-	margin: 0;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-	box-sizing: border-box;
-	color: #444;
+  padding: 0;
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  box-sizing: border-box;
+  color: #444;
 }
 
 a {
-	text-decoration: none;
-	color: #444;
-	transition: 0.4s;
+  text-decoration: none;
+  color: #444;
+  transition: 0.4s;
 }
 
 a:hover {
-	color: #800000;
+  color: #800000;
 }
 
 /* FORM */
 form {
-	width: 450px;
-	margin: 0 auto;
+  width: 450px;
+  margin: 0 auto;
 }
 
 .form-group {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
 }
 
 .form-group label {
-	font-weight: bold;
-	font-size: .9em;
-	margin-bottom: .4em;
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-bottom: 0.4em;
 }
 
 .form-group input,
 .form-group textarea {
-	padding: 0.6em;
-	color: #777;
-	font-size: 0.8em;
+  padding: 0.6em;
+  color: #777;
+  font-size: 0.8em;
 }
 
 input[type="submit"] {
-	background-color: #efefef;
-	border: 2px solid transparent;
-	padding: 0.6em 1em;
-	font-weight: bold;
-	font-size: 1.1em;
-	cursor: pointer;
-	transition: 0.4s;
+  background-color: #efefef;
+  border: 2px solid transparent;
+  padding: 0.6em 1em;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 5px;
 }
 
 input[type="submit"]:hover {
-	color: #800000;
-	border-color: #800000;
-	background-color: transparent;
+  color: #800000;
+  border-color: #800000;
+  background-color: transparent;
+}
+
+.validation-error p {
+  color: #800000;
+  margin-top: 0.4em;
+  border-left: 3px solid #800000;
+  padding-left: 0.2em;
 }

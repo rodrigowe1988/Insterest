@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+//http requisitions
 import { HttpClientModule } from '@angular/common/http';
+
+//work with forms
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
+//components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';

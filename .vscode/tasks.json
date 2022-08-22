@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "ng",
+			"path": "moments",
+			"problemMatcher": [],
+			"label": "npm: ng - moments",
+			"detail": "ng",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

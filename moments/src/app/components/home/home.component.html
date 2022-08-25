@@ -1,7 +1,19 @@
 <div class="home-container">
-	<h1>See I've shared of my life</h1>
-	<!--search form-->
-	<div *ngFor="let moment of moments">
-		<h2>{{moment.title}}</h2>
-	</div>
+  <h1>See I've shared of my life</h1>
+  <!--search form-->
+  <div *ngIf="moments.length > 0; else noMoments">
+    <div class="moments container">
+      <div class="moment" *ngFor="let moment of moments">
+			<img src="{{baseApiUrl}}uploads/{{moment.image}}" alt="{{moment.title}}"/>
+			<h3>{{ moment.title }}</h3>
+			<p class="date">Post date: {{moment.created_at}}</p>
+			<p>Comments: {{moment.comments!.length}}</p>
+			<p><a routerLink="moments/{{moment.id}}">Details</a></p>
+		</div>
+    </div>
+  </div>
+  <ng-template #noMoments>
+    <h1>There's no moments registered in this account!</h1>
+    <p><a routerLink="/moments/new">Share a new moment</a></p>
+  </ng-template>
 </div>

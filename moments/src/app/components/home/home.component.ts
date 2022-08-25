@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
       const data = items.data;
 
       data.map(item => {
-        item.created_at = new Date(item.created_at!).toLocaleDateString('pt-BR')
+        item.created_at = new Date(item.created_at!).toLocaleDateString('en-US')
       });
       this.allMoments = data;
       this.moments = data;

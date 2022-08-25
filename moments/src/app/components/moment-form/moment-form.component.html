@@ -31,7 +31,7 @@
     <label for="image"
       >Choose the photo that represent this moment perfectly.</label
     >
-    <input type="file" name="photo" accept="image/" />
+    <input type="file" (change)="onFileSelected($event)">
   </div>
   <input type="submit" value="{{ btnText }}" />
 </form>

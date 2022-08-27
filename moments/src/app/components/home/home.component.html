@@ -1,6 +1,12 @@
 <div class="home-container">
-  <h1>See I've shared of my life</h1>
-  <!--search form-->
+  <h1>See what I've shared of my life</h1>
+  <div class="search-container">
+    <form>
+      <fa-icon [icon]="faSearch"></fa-icon>
+      <input type="text" placeholder="Search for a moment..." (input)="search($event)"/>
+
+    </form>
+  </div>
   <div *ngIf="moments.length > 0; else noMoments">
     <div class="moments container">
       <div class="moment" *ngFor="let moment of moments">

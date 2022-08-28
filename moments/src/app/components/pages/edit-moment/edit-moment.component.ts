@@ -43,8 +43,18 @@ export class EditMomentComponent implements OnInit {
 
     await this.momentService.updateMoment(id!, formData).subscribe();
 
-    this.messageService.add(`Moment ${momentData.title} was successfully updated!`);
+    this.messageService.add(
+      `Moment ${momentData.title} was successfully updated!`
+    );
+
+    await this.delay(2000);
 
     this.router.navigate(['/']);
+  }
+
+  delay(time: any) {
+    return new Promise(resolve => {
+      setTimeout(resolve, time);
+  });
   }
 }

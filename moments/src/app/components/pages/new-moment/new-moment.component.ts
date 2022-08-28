@@ -38,6 +38,7 @@ export class NewMomentComponent implements OnInit {
     // show message
     this.messageService.add('Moment successfully added!');
 
+  
     // redirect
     this.router.navigate(['/']);
   }

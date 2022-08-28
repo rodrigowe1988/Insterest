@@ -22,7 +22,7 @@ export class MomentFormComponent implements OnInit {
       id: new FormControl(this.momentData ? this.momentData.id : ''),
       title: new FormControl(this.momentData ? this.momentData.title : '', [Validators.required]),
       description: new FormControl(this.momentData ? this.momentData.description : '', [Validators.required]),
-      image: new FormControl(''),
+      image: new FormControl(this.momentData ? this.momentData.image : ''),
     });
   }
 

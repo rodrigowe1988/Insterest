@@ -6,11 +6,11 @@
   />
   <div class="about-moment">
     <h3>About this moment:</h3>
-    <p>{{moment.description}}</p>
+    <p>{{ moment.description }}</p>
   </div>
   <div class="actions">
     <h3>Actions:</h3>
-    <a routerLink="/moments/edit/{{moment.id}}" class="edit-btn">
+    <a routerLink="/moments/edit/{{ moment.id }}" class="edit-btn">
       <fa-icon [icon]="faEdit"></fa-icon>Edit
     </a>
     <button class="remove-btn" (click)="removeHandler(moment.id!)">
@@ -19,6 +19,36 @@
   </div>
   <!--Comments here-->
   <div class="comments">
-    <h3>Comments ({{moment.comments!.length > 0 ? moment.comments!.length : 0 }})</h3>
+    <h3>
+      Comments ({{ moment.comments!.length > 0 ? moment.comments!.length : 0 }})
+    </h3>
+    <!--<div *ngIf="moment.comments!.length > 0; else noComments">-->
+      <div>
+      <div class="comment-container" *ngFor="let comment of moment.comments">
+        <p class="comment">{{ comment.text }}</p>
+        <p class="author"><span>by:</span>{{ comment.username }}</p>
+      </div>
+      <div class="comment-container">
+        <p class="comment">Some comment here about the picture above</p>
+        <p class="author"><span>by:</span>Rodrigo Weber</p>
+      </div>
+    </div>
+  </div>
+  <ng-template #noComments>
+    <p>No comments</p>
+  </ng-template>
+  <div class="comment-form">
+    <h3>Comment below:</h3>
+    <form>
+      <div class="form-group">
+        <label for="text">Comment:</label>
+        <textarea placeholder="Text your comment here" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="text">Name:</label>
+        <textarea placeholder="Type your name here" required></textarea>
+      </div>
+      <input type="submit" value="Comment" />
+    </form>
   </div>
 </div>

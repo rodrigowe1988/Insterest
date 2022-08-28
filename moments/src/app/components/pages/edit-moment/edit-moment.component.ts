@@ -47,7 +47,7 @@ export class EditMomentComponent implements OnInit {
       `Moment ${momentData.title} was successfully updated!`
     );
 
-    await this.delay(2000);
+    await this.delay(1000);
 
     this.router.navigate(['/']);
   }

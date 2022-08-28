@@ -11,6 +11,7 @@ import { Moment } from 'src/app/Moment';
 export class MomentFormComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<Moment>();
   @Input() btnText!: string;
+  @Input() momentData: Moment | null = null;
 
   momentForm!: FormGroup;
 
@@ -33,7 +34,7 @@ export class MomentFormComponent implements OnInit {
     return this.momentForm.get('title')!;
   }
 
-  onFileSelected(event: any){
+  onFileSelected(event: any) {
     const file: File = event.target.files[0];
 
     this.momentForm.patchValue({ image: file });
